@@ -9,26 +9,16 @@ output:
     toc_float: true
 ---
 
-<style>
-    body { 
 
-    font-family: Calibri;
-    background-color: #F2F3F4 ;
-    text-align: justify;
-    }
- 
-</style>
 ```{r setup, include=FALSE}
 knitr::opts_chunk$set(echo = TRUE)
 ```
 
 ## **About Me**
 
-Hello everyone! My names is Yudum Paçin. I was born in Bursa, Mudanya. I have been working as an IT Business Analyts in VakifBank for 6 years. However, I am about to switch my career to be a Data Scientist. My interest of data science area started from 2019 with the famous Coursera course "Maching Learning" from Andrew Ng, which i think no longer exists as one course but is converted to a Machine Learning Specialization. But before that, i was in this area before realizing that i am. Let me explain this!
+Hello everyone! My names is Yudum Paçin. I was born in Bursa, Mudanya. I have been working as an IT Business Analyts in VakifBank for 6 years. However, I am about to switch my career to be a Data Scientist. My interest of data science area started from 2019 with the famous Coursera course "Maching Learning" from Andrew Ng, which i think no longer exists as one course but is converted to a Machine Learning Specialization. 
 
-I was graduated from Mathematics department of  Middle East Technical University in 2012. After graduation, i was sure that my profession will be in the IT sector.For this reason, to improve my knowledge about software development, i started my Master degree in Informatics Institute, METU. In those years, i've also worked as a Research Assistant. Through my research area years, i was doing  statistical tests, but this  process was only a tool for me. i was focused on results not the process. Simply, IBM SPSS was doing it for me. When i first understood the idea behind lineer regression with the Machine Learning Course from Coursera i was fascinated with the idea and decided to learn more about it.
-
-As a data science enthusiast and future-data scientist, i want to use machine learning skills to automate repetitive jobs like document classification, e-mail replying, classification of incident records from production environments testing user interfaces etc. Even, reporting to manager can be a machine learning idea for me. To sum up, if there is a work that computers can handle better or equal than humans, then we should find a new way to automate it. 
+I was graduated from Mathematics department of  Middle East Technical University in 2012. After graduation, i was sure that my profession will be in the IT sector.For this reason, to improve my knowledge about software development, i started my Master degree in Informatics Institute, METU. As a data science enthusiast and future-data scientist, i want to use machine learning skills to automate repetitive jobs like document classification, e-mail replying, classification of incident records from production environments testing user interfaces etc. Even, reporting to manager can be a machine learning idea for me. To sum up, if there is a work that computers can handle better or equal than humans, then we should find a new way to automate it. 
 
 You can reach me via my [linkedin](https://www.linkedin.com/in/yudum-pacin/) page.
 
@@ -37,23 +27,15 @@ You can reach me via my [linkedin](https://www.linkedin.com/in/yudum-pacin/) pag
 This section is from the RStudio talk **"Advocating for Automation: Adapting Current Tools in Environmental Science through R"** by Hannah Podzorski, GSI Envronmental. Podzorski points out the importance of automation for diverse skilled teams and how they applied it with R. You can reach to talk from [link](https://www.rstudio.com/conference/2022/talks/advocating-for-automation/)
 
 The reason I chose this topic is that I am also trying to find a new ways to automate the repetitive office works and create more time for more valuable jobs.
-
-Automation has many pros like
-
-* Reproducibility
-* It can be simple
-* Saves time
-* Less human interaction means less errors
-
 But, where to start automation? Podzorski suggest that start small, and she and team members decide to start to automate the process with Microsoft Excel Products.
 
-`{openxlsx}` : this package is designed for edit, read and create Excel files in R. The team members used to edit the csv files, because  the  `write.csv(data,"data.csv")` command. Once the programmer start to use openxlsx, it saved more time for analysts to analyze rather than  editing the csv file.
+`{openxlsx}` : this package is designed for edit, read and create Excel files in R. Once the programmer start to use openxlsx, it saved more time for analysts to analyze rather than  editing the csv file.
 
 `openxlsx::write.xlsx(data,"data.xlsx")`
 
 The other useful packages is `{officer}` and `{rvg}`.  Officer is used to manuplate word documents and PowerPoints in R. Rvg has a function called**dml** which enables the edit ggplot object option before exporting it to a PowerPoint file.
 
-The team of Podzorski later decides to use their automation skills with ProUCL. ProUCL is statstical software for Left Censored Enviromental data.The team loads the data as input and export the results for further analysis. The team decides to autamate this process with "Mini-Mouse Macro". First a function in R, subsets the large data in more managable chunks, and then the mouse macro takes these input files, and clicks though the software app. for getting statistics and saves the output file to PC. This can be seen as a small task to automate but when the number of files increase, the time for a human to do it one by one becomes tedious. Also, they automate the work of copy-paste ProUCL outputs to Excel. Finally, the team were able to save more time to focuse on data analysis. 
+The team of Podzorski later decides to use their automation skills with ProUCL, a statistical software for Left Censored Enviromental data.The team loads the data as input and export the results for further analysis. The team decides to autamate this process with "Mini-Mouse Macro". First a function in R, subsets the large data in more managable chunks, and then the mouse macro takes these input files, and clicks though the software app. for getting statistics and saves the output file to PC. This can be seen as a small task to automate but when the number of files increase, the time for a human to do it one by one becomes tedious. Also, they automate the work of copy-paste ProUCL outputs to Excel. Finally, the team were able to save more time to focuse on data analysis. 
 
 ## **3 R Posts**
 
@@ -92,11 +74,11 @@ model %>%
 ```
 To summarise, the key differences for consideration between PCA and autoencoders are:
 
-* There are no guidelines to choose the size of the bottleneck layer in the autoencoder unlike PCA. With PCA, the top k components can be chosen to factor in x% of the variation. Often PCA can be used as a guide to choose k.
+* There are no guidelines to choose the size of the bottleneck layer in the autoencoder unlike PCA. 
 
-* The autoencoder tends to perform better when k is small when compared to PCA, meaning the same accuracy can be achieved with less components and hence a smaller data set. This is important when dealing with very large data sets.
+* The autoencoder tends to perform better when k is small when compared to PCA.
 
-* Autoencoders require more computation than PCA. Although, for very large data sets that can’t be stored in memory, PCA will not be able to be performed. The autoencoder construction using keras can easily be batched resolving memory limitations.
+* Autoencoders require more computation than PCA. 
 
 ### **2. Audio classification with torch**
 In this article classification of audio using R torch is examined. I have tried audio classification with spectograms using Keras tensorflows with Python before, so this topic got my attention.
@@ -105,14 +87,11 @@ In this article classification of audio using R torch is examined. I have tried 
 
 The dataset for this study holds recordings of thirty different one- or two-syllable words, uttered by different speakers. There are about 65,000 audio files.
 
-This representation is actually difference of loudness of voice over time. Author suggests that event the domain expert of sound classification can conclude that this is not enough for sound classification. To get more meaningful transformation, fourier-transform method is applied for getting a representation of sound in a way that had no information about time at all and have as much just as much information as original signal.  In R  ```torch_fft_fft``` function is used, where fft stands for Fast Fourier Transform.
-
-From this alternate representation, original sound wave can be calculated by taking the frequencies present in the signal, weighting them according to their coefficients, and adding them up. But in sound classification, timing information must surely matter, for this reason another represenaiton is necessary.
+Waveform representation of sound files is actually difference of loudness of voice over time. To get more meaningful transformation, fourier-transform method is applied for getting a representation of sound in a way that had no information about time at all and have as much just as much information as original signal.  In R  ```torch_fft_fft``` function is used, where fft stands for Fast Fourier Transform.
 
 We can divide the signal into small chunks, and run the Fourier Transform on each of them. This representation is  called the spectrogram.
 
 The spectrogram is a two-dimensional representation: an image. From now on, we can use convolutional neural networks for image recognition using `library(torch)`.
-
 
 ### **3. Update Your Machine Learning Pipeline With vetiver and Quarto**
 
@@ -122,7 +101,7 @@ The reason I chose this article is I am curious about how the models are created
 
 Machine learing operations (MLOps) are a set of practices for running ML models in production environments. Vertier, an open-source framework for entire morel life cycle, provides R an and Pyhton developers a unified way for working with ML models.
 
-The app provides real-time predictions of the number of bikes at stations across the city, Washington D.C.. The end to end machine learning pipeline uses R to modify and import the data, saves it in a pin, which is a package publishes data, models, and other R objects. Then the pipeleine developes a model and moves the model to a deployable location.
+The app provides real-time predictions of the number of bikes at stations across the city, Washington D.C.. The end to end machine learning pipeline uses R to modify and import the data, saves it in a pin, which is a package publishes data, models, and other R objects. Then the pipeline developes a model and moves the model to a deployable location.
 
 Creating An End-to-End Machine Learning Pipeline
 
