@@ -20,7 +20,7 @@ output:
     }
     
     
-    h1 {
+    h1{
     font-size: 28;
     }
 </style>
@@ -34,7 +34,7 @@ Hello everyone! My names is Yudum Paçin. I was born in Bursa, Mudanya, i've liv
 
 I have been working as an IT Business Analyts in VakifBank for 6 years now. However, I am about to switch my career to be a Data Scientist `r knitr::asis_output("\U1F600")` In the near future, I will be saying that I am a proud Data Scientist. My interest of data science area started from 2019 with the famous Coursera course "Maching Learning" from Andrew Ng, which i think no longer exists as one course but is converted to a Machine Learning Specialization. But before that, i was in this area before realizing that i am. Let me explain this!
 
-![*The "Machine Learning Course" got me here*](ML.png){width=50% }
+![*The "Machine Learning Course" got me here*](ML.png){width=40%}
 
 First of all, I am a Mathematician. I was graduated from [Mathematics department of  Middle East Technical University](https://math.metu.edu.tr/) in 2012. After graduation, i was sure that my profession will be in the IT sector, but i didn't know where to start, because the sector and job titles are seemed to me as so endless and confusing. For this reason, to improve my knowledge about software development, i started my Master degree in Informatics Institute, METU. In those years, i've also worked as a Research Assistant. Through my researching years i was doing data manuplation, using IBM SPSS to handle statistical tests, like correlation tests, ANOVA etc., Howeveer, this whole process was only a tool for me to write my papers, reports.i was focused on results not the process i've been applying. Simply, IBM SPSS was doing it for me. When i first understood the idea behing lineer regression with the Machine Learning Course from Coursera i was fascinated. Thinking the spreedsheet data as a matrix, with data samples as rows and features as columns, creating a linear equation with it, solving the equationusing calculus.. I thought this is my area, i have to learn more! so continuesly i read, watch and  learn abaout machine learning. As a former mresearch assistant and now an IT sector worker, i think this area is and will be my life passion.
 
