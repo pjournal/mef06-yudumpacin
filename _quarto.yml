@@ -3,11 +3,11 @@ project:
   output-dir: docs
 
 book:
-  title: "[STUDENT/GROUP NAME] Progress Journal"
+  title: "Yudum Paçin"
   repo-url: https://github.com/pjournal/gh-pages-quarto-template
   chapters:
     - index.qmd
-    - assignment1.qmd
+    - assignment1.Rmd
   page-footer: 
     center: "[MEF BDA 503](https://mef-bda503.github.io)" 
   sharing: [twitter, facebook]
