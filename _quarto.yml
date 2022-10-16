@@ -4,7 +4,7 @@ project:
 
 book:
   title: "Yudum Paçin"
-  repo-url: "https://github.com/pjournal/mef06-yudumpacin"
+  repo-url: https://github.com/pjournal/gh-pages-quarto-template
   chapters:
     - index.qmd
     - assignment1.Rmd
