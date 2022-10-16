@@ -11,7 +11,6 @@ output:
 <style>
     body { 
     font-family: Calibri;
-    background-color: #F5F5F5;
     text-align: justify;
     }
 </style>
@@ -23,7 +22,7 @@ knitr::opts_chunk$set(echo = TRUE)
 
 Hello everyone! My names is Yudum Paçin. I was born in Bursa, Mudanya, i've lived in Mudanya until I went to Ankara for my university education. My family still lives there. I have been living in İstanbul for 6  years now. I have been working as an IT Business Analyts in VakifBank for 6 years now. However, I am about to switch my career to be a Data Scientist `r knitr::asis_output("\U1F600")`. My interest of data science area started in 2019 with the famous Coursera course "Machine Learning" from Andrew Ng, which i think no longer exists as one course but is converted to a Machine Learning Specialization. But before that, i was in this area before realizing that i am. Let me explain this!
 
-![*The "Machine Learning Course" got me here*](ML.png){width=50% }
+![*The "Machine Learning Course" got me here*](images/ML.png){width=50% }
 
 First of all, I am a Mathematician. I was graduated from [Mathematics department of  Middle East Technical University](https://math.metu.edu.tr/) in 2012. After graduation, i was sure that my profession will be in the IT sector, but i didn't know where to start. To improve my knowledge in software development, i began my Msc degree in Informatics Institute, METU. I've also worked as a Research Assistant. Through my graduate years i was doing data manipulation, statistical tests, like correlation tests, ANOVA etc., However, this whole process was only a tool for me, i was focused on results not the process. Simply, IBM SPSS was doing it for me. When i first understood the idea behind linear regression with the Machine Learning Course from Coursera i was fascinated with the idea of using Math for this way. As a data science enthusiast and future-data scientist, i want to use machine learning skills to automate the repetitive jobs. I think our human brains deserve better jobs. What i mean by repetitive jobs can be document classification, e-mail replying, classification of incident records from production environments, testing user interfaces etc. Even, reporting to manager can be a machine learning idea for me. To sum up, if there is a work that computers can handle better or equal than humans, then we should find a new way to automate it. Deep learning models are doing great at computer vision and NLP areas, even they are now as successful as human cognitive level in some areas:
 [Alphago](https://www.deepmind.com/research/highlighted-research/alphago), 
@@ -247,8 +246,8 @@ Thanks for reading...
 <div align="right">
 
 <a href= "https://www.linkedin.com/in/yudum-pacin/"> <img alt="linkedin" src="linkedin.png"  width="30"/>
-<a href= "https://github.com/yudumpacin"> <img alt="github" src="github.png"  width="30"/>
-<a href= "https://twitter.com/pacinoyudum"> <img alt="twitter" src="twitter.png"  width="30"/>
+<a href= "https://github.com/yudumpacin"> <img alt="github" src="images/github.png"  width="30"/>
+<a href= "https://twitter.com/pacinoyudum"> <img alt="twitter" src="images/twitter.png"  width="30"/>
 
 </div>
 
