@@ -31,8 +31,7 @@ First of all, I am a Mathematician. I was graduated from [Mathematics department
 
 Other than giving humans more respectable jobs and leave others to AI `r knitr::asis_output("\U1F600")`, i am planning to work on time series models to predict future and also marketing analytics.
 
-You can reach me via my [linkedin](https://www.linkedin.com/in/yudum-pacin/) page.
-
+You can reach me via my **[linkedin](https://www.linkedin.com/in/yudum-pacin/)** page.
 
 ## **Advocating for Automation**
 
@@ -245,7 +244,7 @@ Thanks for reading...
 
 <div align="right">
 
-<a href= "https://www.linkedin.com/in/yudum-pacin/"> <img alt="linkedin" src="linkedin.png"  width="30"/>
+<a href= "https://www.linkedin.com/in/yudum-pacin/"> <img alt="linkedin" src="images/linkedin.png"  width="30"/>
 <a href= "https://github.com/yudumpacin"> <img alt="github" src="images/github.png"  width="30"/>
 <a href= "https://twitter.com/pacinoyudum"> <img alt="twitter" src="images/twitter.png"  width="30"/>
 
