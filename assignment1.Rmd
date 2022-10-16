@@ -1,5 +1,6 @@
 ---
-title: "About Me and Data Science in R"
+title: "Assigment 1"
+subtitle: "About Me and Data Science in R"
 author: "Yudum Paçin"
 date: "14 October 2022"
 output: 
@@ -70,13 +71,13 @@ The team of Podzorski later decides to use their automation skills with ProUCL. 
 In this section, 3 R posts I chose will be summarized and discussed.
 
 
-### **1. PCA vs Autoencoders for Dimensionality Reduction**
+### **PCA vs Autoencoders for Dimensionality Reduction**
 
 *You can reach the full version of article from the [link](https://www.r-bloggers.com/2018/07/pca-vs-autoencoders-for-dimensionality-reduction/)*
 
 When our data set has too many dimensions, it is a wise desicion to go on with the important ones and leave others. But how to choose important ones? This article compares two  methods for dimension reduction, PCA and Autoencoders with R using the Australian Institute of Sport data set.
 
-#### Principal Components Analysis (PCA)
+**Principal Components Analysis (PCA)**
 
 PCA reduces the data frame by orthogonally transforming the data into a set of principal components. The first principal component explains the most amount of the variation in the data in a single component, the second component explains the second most amount of the variation, etc. By choosing the top k principal components that explain say 80-90% of the variation, the other components can be dropped since they do not significantly benefit the model. 
 
@@ -95,7 +96,7 @@ qplot(x = 1:11, y = cumsum(pca$sdev)/sum(pca$sdev), geom = "line")
 
 From this plot, it can be concluded that first 6 components account for approximately 90% of the variation in the data. 
 
-#### Autoencoder
+**Autoencoder**
 
 The autoencoder will be constructed using the keras package. As with any neural network there is a lot of flexibility in how autoencoders can be constructed such as the number of hidden layers and the number of nodes in each. With each hidden layer the network will attempt to find new structures in the data. In general autoencoders are symmetric with the middle layer being the bottleneck. The first half of the autoencoder is considered the encoder and the second half is considered the decoder.
 
@@ -151,7 +152,7 @@ To summarise, the key differences for consideration between PCA and autoencoders
 
 
 
-### **2. Audio classification with torch**
+### **Audio classification with torch**
 In this article classification of audio using R torch is examined. I have tried audio classification with spectograms using Keras tensorflows with Python before, so this topic got my attention.
 
 *You can reach the full version of article from the [link](https://blogs.rstudio.com/ai/posts/2022-10-06-audio-classification-torch/)*
@@ -191,7 +192,7 @@ The spectrogram is a two-dimensional representation: an image. From now on, we c
 ```{r post1, echo=FALSE}
 
 ```
-### **3. Update Your Machine Learning Pipeline With vetiver and Quarto**
+### **Update Your Machine Learning Pipeline With vetiver and Quarto**
 
 The reason I chose this article is I am curious about how the models are created and deployed in real-life. How is the Machine Learning Pipeline process works?
 
