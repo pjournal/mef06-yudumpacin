@@ -8,11 +8,13 @@ output:
     toc: true
     toc_depth: 3
     toc_float: true
+    number_sections: false
 ---
 <style>
     body { 
     font-family: Calibri;
     text-align: justify;
+    font-size: 11pt;
     }
 </style>
 ```{r setup, include=FALSE}
@@ -79,9 +81,9 @@ When our data set has too many dimensions, it is a wise desicion to go on with t
 
 **Principal Components Analysis (PCA)**
 
-PCA reduces the data frame by orthogonally transforming the data into a set of principal components. The first principal component explains the most amount of the variation in the data in a single component, the second component explains the second most amount of the variation, etc. By choosing the top k principal components that explain say 80-90% of the variation, the other components can be dropped since they do not significantly benefit the model. 
+PCA is a process of reducing the data frame by orthogonality transforming the data into a set of principal components. The first principal component explains the most amount of the variation in the data in a single component, the second component explains the second most amount of the variation, and so on. By choosing the top k principal components that explain say 80-90% of the variation, the other components can be dropped since they do not significantly benefit the model. 
 
-To investigate  the variation in the data. Plotting the data points in 3 dimensions gives a better indication of the structure of the data. However, there can be still many dimensions which explain some of the variation that are not visualised. To do so they would all need to be plotted in their various combinations. This is a draw back of PCA.
+To investigate  the variation in the data. Plotting the data points in 3 dimensions gives a better indication of the structure of the data. However, there can be still many dimensions which explain some of the variation that are not visualized. To do so they would all need to be plotted in their various combinations. This is a draw back of PCA.
 
 ```
 # standardise
@@ -89,16 +91,10 @@ minmax <- function(x) (x - min(x))/(max(x) - min(x))
 x_train <- apply(ais[,1:11], 2, minmax)
 # PCA
 pca <- prcomp(x_train)
-# plot cumulative plot
-qplot(x = 1:11, y = cumsum(pca$sdev)/sum(pca$sdev), geom = "line")
 ```
-![](https://i0.wp.com/gradientdescending.com/wp-content/uploads/2018/07/PCA-1-2.png?w=578){width=40% }
-
-From this plot, it can be concluded that first 6 components account for approximately 90% of the variation in the data. 
-
 **Autoencoder**
 
-The autoencoder will be constructed using the keras package. As with any neural network there is a lot of flexibility in how autoencoders can be constructed such as the number of hidden layers and the number of nodes in each. With each hidden layer the network will attempt to find new structures in the data. In general autoencoders are symmetric with the middle layer being the bottleneck. The first half of the autoencoder is considered the encoder and the second half is considered the decoder.
+The autoencoder can be constructed using the keras package. As with any neural network there is a lot of flexibility in how autoencoders can be constructed such as the number of hidden layers and the number of nodes in each. With each hidden layer the network will attempt to find new structures in the data. In general autoencoders are symmetric with the middle layer being the bottleneck. The first half of the autoencoder is considered the encoder and the second half is considered the decoder.
 
 ```
 # set training data
@@ -140,16 +136,13 @@ mse.ae2
 
 </center>
 
-To summarise, the key differences for consideration between PCA and autoencoders are:
+To summarize, some key differences for consideration between PCA and autoencoders are:
 
 1- There are no guidelines to choose the size of the bottleneck layer in the autoencoder unlike PCA. With PCA, the top k components can be chosen to factor in x% of the variation. Often PCA can be used as a guide to choose k.
 
-2- The autoencoder tends to perform better when k is small when compared to PCA, meaning the same accuracy can be achieved with less components and hence a smaller data set. This is important when dealing with very large data sets.
+2- The autoencoder tends to perform better when k is small.
 
-3- When visualising the PCA output, in general the first 2 or 3 components are used. The drawback is the other components are not visable on the plot and therefore not seeing all the information. Different combinations of dimensions will need to be plotted. Autoencoders can be constructed to reduce the full data down to 2 or 3 dimensions retaining all the information which can save time.
-
-4- Autoencoders require more computation than PCA. Although, for very large data sets that can’t be stored in memory, PCA will not be able to be performed. The autoencoder construction using keras can easily be batched resolving memory limitations.
-
+3- Autoencoders require more computation than PCA..
 
 
 ### **Audio classification with torch**
@@ -165,7 +158,7 @@ waveform, sample_rate, label_index, and label.
 
 <center>
 
-![*Figure 2.1 - The spoken word "bird": Sound wave*](https://blogs.rstudio.com/ai/posts/2022-10-06-audio-classification-torch/images/audio-bird-waveform.png){width=50% }
+![*Figure 2.1 - The spoken word "bird": Sound wave*](https://blogs.rstudio.com/ai/posts/2022-10-06-audio-classification-torch/images/audio-bird-waveform.png){width=70% }
 
 </center>
 
@@ -173,7 +166,7 @@ This representation is actually difference of loudness of voice over time. Autho
 
 <center>
 
-![*Figure 2.2 - The spoken word "bird": Discrete Fourier Transform*](https://blogs.rstudio.com/ai/posts/2022-10-06-audio-classification-torch/images/audio-bird-dft.png){width=50% }
+![*Figure 2.2 - The spoken word "bird": Discrete Fourier Transform*](https://blogs.rstudio.com/ai/posts/2022-10-06-audio-classification-torch/images/audio-bird-dft.png){width=70% }
 
 </center>
 
@@ -184,7 +177,7 @@ We can divide the signal into small chunks, and run the Fourier Transform on eac
 
 <center>
 
-![*Figure 2.3 - A spectogram*](https://blogs.rstudio.com/ai/posts/2022-10-06-audio-classification-torch/images/audio-spectrogram.png){width=50% }
+![*Figure 2.3 - A spectogram*](https://blogs.rstudio.com/ai/posts/2022-10-06-audio-classification-torch/images/audio-spectrogram.png){width=70% }
 
 </center>
 
@@ -247,11 +240,11 @@ The team has created a dashboard for sharing the full context of this project.
 Thanks for reading...
 </p>
 
+
+
 <div align="right">
-
-<a href= "https://www.linkedin.com/in/yudum-pacin/"> <img alt="linkedin" src="images/linkedin.png"  width="30"/>
-<a href= "https://github.com/yudumpacin"> <img alt="github" src="images/github.png"  width="30"/>
-<a href= "https://twitter.com/pacinoyudum"> <img alt="twitter" src="images/twitter.png"  width="30"/>
-
+<a href= "https://www.linkedin.com/in/yudum-pacin/"> <img alt="linkedin" src="images/linkedin.png"  width="30"></a>
+<a href= "https://github.com/yudumpacin"> <img alt="github" src="images/github.png"  width="30"></a>
+<a href= "https://twitter.com/pacinoyudum"> <img alt="twitter" src="images/twitter.png"  width="30"></a>
 </div>
 

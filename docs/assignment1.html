@@ -178,6 +178,7 @@ ul.task-list li input[type="checkbox"] {
     body { 
     font-family: Calibri;
     text-align: justify;
+    font-size: 11pt;
     }
 </style>
 <section id="about-me" class="level2" data-number="1.1">
@@ -221,19 +222,15 @@ ul.task-list li input[type="checkbox"] {
 <p><em>You can reach the full version of article from the <a href="https://www.r-bloggers.com/2018/07/pca-vs-autoencoders-for-dimensionality-reduction/">link</a></em></p>
 <p>When our data set has too many dimensions, it is a wise desicion to go on with the important ones and leave others. But how to choose important ones? This article compares two methods for dimension reduction, PCA and Autoencoders with R using the Australian Institute of Sport data set.</p>
 <p><strong>Principal Components Analysis (PCA)</strong></p>
-<p>PCA reduces the data frame by orthogonally transforming the data into a set of principal components. The first principal component explains the most amount of the variation in the data in a single component, the second component explains the second most amount of the variation, etc. By choosing the top k principal components that explain say 80-90% of the variation, the other components can be dropped since they do not significantly benefit the model.</p>
-<p>To investigate the variation in the data. Plotting the data points in 3 dimensions gives a better indication of the structure of the data. However, there can be still many dimensions which explain some of the variation that are not visualised. To do so they would all need to be plotted in their various combinations. This is a draw back of PCA.</p>
+<p>PCA is a process of reducing the data frame by orthogonality transforming the data into a set of principal components. The first principal component explains the most amount of the variation in the data in a single component, the second component explains the second most amount of the variation, and so on. By choosing the top k principal components that explain say 80-90% of the variation, the other components can be dropped since they do not significantly benefit the model.</p>
+<p>To investigate the variation in the data. Plotting the data points in 3 dimensions gives a better indication of the structure of the data. However, there can be still many dimensions which explain some of the variation that are not visualized. To do so they would all need to be plotted in their various combinations. This is a draw back of PCA.</p>
 <pre><code># standardise
 minmax &lt;- function(x) (x - min(x))/(max(x) - min(x))
 x_train &lt;- apply(ais[,1:11], 2, minmax)
 # PCA
-pca &lt;- prcomp(x_train)
-# plot cumulative plot
-qplot(x = 1:11, y = cumsum(pca$sdev)/sum(pca$sdev), geom = "line")</code></pre>
-<p><img src="https://i0.wp.com/gradientdescending.com/wp-content/uploads/2018/07/PCA-1-2.png?w=578" class="img-fluid" style="width:40.0%"></p>
-<p>From this plot, it can be concluded that first 6 components account for approximately 90% of the variation in the data.</p>
+pca &lt;- prcomp(x_train)</code></pre>
 <p><strong>Autoencoder</strong></p>
-<p>The autoencoder will be constructed using the keras package. As with any neural network there is a lot of flexibility in how autoencoders can be constructed such as the number of hidden layers and the number of nodes in each. With each hidden layer the network will attempt to find new structures in the data. In general autoencoders are symmetric with the middle layer being the bottleneck. The first half of the autoencoder is considered the encoder and the second half is considered the decoder.</p>
+<p>The autoencoder can be constructed using the keras package. As with any neural network there is a lot of flexibility in how autoencoders can be constructed such as the number of hidden layers and the number of nodes in each. With each hidden layer the network will attempt to find new structures in the data. In general autoencoders are symmetric with the middle layer being the bottleneck. The first half of the autoencoder is considered the encoder and the second half is considered the decoder.</p>
 <pre><code># set training data
 x_train &lt;- as.matrix(x_train)
 # set model
@@ -273,11 +270,10 @@ mse.ae2
 </div>
 <p><em>Image source: https://www.geeksforgeeks.org/ml-auto-encoders/</em></p>
 </center>
-<p>To summarise, the key differences for consideration between PCA and autoencoders are:</p>
+<p>To summarize, some key differences for consideration between PCA and autoencoders are:</p>
 <p>1- There are no guidelines to choose the size of the bottleneck layer in the autoencoder unlike PCA. With PCA, the top k components can be chosen to factor in x% of the variation. Often PCA can be used as a guide to choose k.</p>
-<p>2- The autoencoder tends to perform better when k is small when compared to PCA, meaning the same accuracy can be achieved with less components and hence a smaller data set. This is important when dealing with very large data sets.</p>
-<p>3- When visualising the PCA output, in general the first 2 or 3 components are used. The drawback is the other components are not visable on the plot and therefore not seeing all the information. Different combinations of dimensions will need to be plotted. Autoencoders can be constructed to reduce the full data down to 2 or 3 dimensions retaining all the information which can save time.</p>
-<p>4- Autoencoders require more computation than PCA. Although, for very large data sets that can’t be stored in memory, PCA will not be able to be performed. The autoencoder construction using keras can easily be batched resolving memory limitations.</p>
+<p>2- The autoencoder tends to perform better when k is small.</p>
+<p>3- Autoencoders require more computation than PCA..</p>
 </section>
 <section id="audio-classification-with-torch" class="level3" data-number="1.3.2">
 <h3 data-number="1.3.2" class="anchored" data-anchor-id="audio-classification-with-torch"><span class="header-section-number">1.3.2</span> <strong>Audio classification with torch</strong></h3>
@@ -288,7 +284,7 @@ mse.ae2
 <center>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><img src="https://blogs.rstudio.com/ai/posts/2022-10-06-audio-classification-torch/images/audio-bird-waveform.png" class="img-fluid figure-img" style="width:50.0%"></p>
+<p><img src="https://blogs.rstudio.com/ai/posts/2022-10-06-audio-classification-torch/images/audio-bird-waveform.png" class="img-fluid figure-img" style="width:70.0%"></p>
 <p></p><figcaption class="figure-caption"><em>Figure 2.1 - The spoken word “bird”: Sound wave</em></figcaption><p></p>
 </figure>
 </div>
@@ -297,7 +293,7 @@ mse.ae2
 <center>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><img src="https://blogs.rstudio.com/ai/posts/2022-10-06-audio-classification-torch/images/audio-bird-dft.png" class="img-fluid figure-img" style="width:50.0%"></p>
+<p><img src="https://blogs.rstudio.com/ai/posts/2022-10-06-audio-classification-torch/images/audio-bird-dft.png" class="img-fluid figure-img" style="width:70.0%"></p>
 <p></p><figcaption class="figure-caption"><em>Figure 2.2 - The spoken word “bird”: Discrete Fourier Transform</em></figcaption><p></p>
 </figure>
 </div>
@@ -307,7 +303,7 @@ mse.ae2
 <center>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><img src="https://blogs.rstudio.com/ai/posts/2022-10-06-audio-classification-torch/images/audio-spectrogram.png" class="img-fluid figure-img" style="width:50.0%"></p>
+<p><img src="https://blogs.rstudio.com/ai/posts/2022-10-06-audio-classification-torch/images/audio-spectrogram.png" class="img-fluid figure-img" style="width:70.0%"></p>
 <p></p><figcaption class="figure-caption"><em>Figure 2.3 - A spectogram</em></figcaption><p></p>
 </figure>
 </div>
@@ -347,9 +343,9 @@ mse.ae2
 Thanks for reading…
 </p>
 <div data-align="right">
-<p><a href="https://www.linkedin.com/in/yudum-pacin/"> <img alt="linkedin" src="images/linkedin.png" width="30"> </a><a href="https://github.com/yudumpacin"> <img alt="github" src="images/github.png" width="30"> </a><a href="https://twitter.com/pacinoyudum"> <img alt="twitter" src="images/twitter.png" width="30"></a></p><a href="https://twitter.com/pacinoyudum">
-</a></div><a href="https://twitter.com/pacinoyudum">
-</a>
+<p><a href="https://www.linkedin.com/in/yudum-pacin/"> <img alt="linkedin" src="images/linkedin.png" width="30"></a> <a href="https://github.com/yudumpacin"> <img alt="github" src="images/github.png" width="30"></a> <a href="https://twitter.com/pacinoyudum"> <img alt="twitter" src="images/twitter.png" width="30"></a></p>
+</div>
+
 
 </section>
 </section>
@@ -465,7 +461,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 </div> <!-- /content -->
 <footer class="footer">
   <div class="nav-footer">
-      <div class="nav-footer-center"></div>
+      <div class="nav-footer-center"><a href="https://mef-bda503.github.io">MEF BDA 503</a></div>
   </div>
 </footer>
 
