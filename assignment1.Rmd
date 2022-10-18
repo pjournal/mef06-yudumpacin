@@ -23,7 +23,7 @@ knitr::opts_chunk$set(echo = TRUE)
 
 ## **About Me**
 
-Hello everyone! My names is Yudum Paçin. I was born in Bursa, Mudanya, i've lived in Mudanya until I went to Ankara for my university education. My family still lives there. I have been living in İstanbul for 6  years now. I have been working as an IT Business Analyts in VakifBank for 6 years now. However, I am about to switch my career to be a Data Scientist `r knitr::asis_output("\U1F600")`. My interest of data science area started in 2019 with the famous Coursera course "Machine Learning" from Andrew Ng, which i think no longer exists as one course but is converted to a Machine Learning Specialization. But before that, i was in this area before realizing that i am. Let me explain this!
+Hello everyone! My names is Yudum Paçin. I was born in Bursa, Mudanya, i've lived in Mudanya until I went to Ankara for my university education. Now, I have been working as an IT Business Analyst in VakifBank for 6 years. However, I am about to switch my career path to be a Data Scientist `r knitr::asis_output("\U1F600")`. My interest of data science area started in 2019 with the famous Coursera course "Machine Learning" from Andrew Ng, which i think no longer exists as one course but is converted to a Machine Learning Specialization. But before that, i was in this area before realizing that i am. Let me explain this!
 
 <center>
 
