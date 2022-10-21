@@ -200,6 +200,11 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
    
   <ul>
   <li><a href="#in-class-exercise-1" id="toc-in-class-exercise-1" class="nav-link active" data-scroll-target="#in-class-exercise-1">IN CLASS EXERCISE 1</a></li>
+  <li><a href="#most-common-planes" id="toc-most-common-planes" class="nav-link" data-scroll-target="#most-common-planes"><span class="toc-section-number">2.1</span>  Most common planes</a></li>
+  <li><a href="#in-which-years-boeing-737-7h4-model-is-constructed-and-how-many" id="toc-in-which-years-boeing-737-7h4-model-is-constructed-and-how-many" class="nav-link" data-scroll-target="#in-which-years-boeing-737-7h4-model-is-constructed-and-how-many"><span class="toc-section-number">3</span>  In which years, BOEING 737-7H4 model is constructed and how many?</a>
+  <ul class="collapse">
+  <li><a href="#is-seat-number-of-boeing-737-7h4-different-from-average-number-of-seats" id="toc-is-seat-number-of-boeing-737-7h4-different-from-average-number-of-seats" class="nav-link" data-scroll-target="#is-seat-number-of-boeing-737-7h4-different-from-average-number-of-seats"><span class="toc-section-number">3.1</span>  Is seat number of BOEING 737-7H4 different from average number of seats?</a></li>
+  </ul></li>
   </ul>
 </nav>
     </div>
@@ -253,29 +258,16 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <div class="sourceCode cell-code" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(tidyverse)</span>
 <span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(nycflights13)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-<p>In this exercise, we will explore planes dataset in nycflights13 library planes, consists of construction information about 3,322 planes used for all flights departing NYC in 2013.</p>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="fu">glimpse</span>(planes)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>Rows: 3,322
-Columns: 9
-$ tailnum      &lt;chr&gt; "N10156", "N102UW", "N103US", "N104UW", "N10575", "N105UW…
-$ year         &lt;int&gt; 2004, 1998, 1999, 1999, 2002, 1999, 1999, 1999, 1999, 199…
-$ type         &lt;chr&gt; "Fixed wing multi engine", "Fixed wing multi engine", "Fi…
-$ manufacturer &lt;chr&gt; "EMBRAER", "AIRBUS INDUSTRIE", "AIRBUS INDUSTRIE", "AIRBU…
-$ model        &lt;chr&gt; "EMB-145XR", "A320-214", "A320-214", "A320-214", "EMB-145…
-$ engines      &lt;int&gt; 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, …
-$ seats        &lt;int&gt; 55, 182, 182, 182, 55, 182, 182, 182, 182, 182, 55, 55, 5…
-$ speed        &lt;int&gt; NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, N…
-$ engine       &lt;chr&gt; "Turbo-fan", "Turbo-fan", "Turbo-fan", "Turbo-fan", "Turb…</code></pre>
-</div>
-</div>
+<p>In this exercise, we will explore planes dataset in nycflights13 library . Planes, consists of construction information about 3,322 planes used for all flights departing NYC in 2013.</p>
+</section>
+<section id="most-common-planes" class="level2" data-number="2.1">
+<h2 data-number="2.1" class="anchored" data-anchor-id="most-common-planes"><span class="header-section-number">2.1</span> Most common planes</h2>
 <p>10 Most common models, manufacturers of the planes are,</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>planes <span class="sc">%&gt;%</span> </span>
-<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">group_by</span>(model,manufacturer) <span class="sc">%&gt;%</span></span>
-<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">summarise</span>(<span class="at">say=</span><span class="fu">n</span>()) <span class="sc">%&gt;%</span></span>
-<span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">arrange</span>(<span class="fu">desc</span>(say),<span class="dv">10</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>planes <span class="sc">%&gt;%</span> </span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">group_by</span>(model,manufacturer) <span class="sc">%&gt;%</span></span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">summarise</span>(<span class="at">say=</span><span class="fu">n</span>()) <span class="sc">%&gt;%</span></span>
+<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">arrange</span>(<span class="fu">desc</span>(say),<span class="dv">10</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code># A tibble: 147 × 3
 # Groups:   model [127]
@@ -297,8 +289,8 @@ $ engine       &lt;chr&gt; "Turbo-fan", "Turbo-fan", "Turbo-fan", "Turbo-fan", "
 <p>737-7H4 BOEING is the most common plane, Let’s have a look at this plane in detail</p>
 <p>737-7H4 is a BOEING model only!, There is no other manufacturer. So, we can filter with “model” only.</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a>planes <span class="sc">%&gt;%</span> </span>
-<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(model<span class="sc">==</span><span class="st">'737-7H4'</span> <span class="sc">&amp;</span> manufacturer<span class="sc">!=</span><span class="st">'BOEING'</span>) </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>planes <span class="sc">%&gt;%</span> </span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(model<span class="sc">==</span><span class="st">'737-7H4'</span> <span class="sc">&amp;</span> manufacturer<span class="sc">!=</span><span class="st">'BOEING'</span>) </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code># A tibble: 0 × 9
 # … with 9 variables: tailnum &lt;chr&gt;, year &lt;int&gt;, type &lt;chr&gt;,
@@ -306,12 +298,15 @@ $ engine       &lt;chr&gt; "Turbo-fan", "Turbo-fan", "Turbo-fan", "Turbo-fan", "
 #   engine &lt;chr&gt;</code></pre>
 </div>
 </div>
-<p>In, what years 737-7H4 is constructed, and how many?</p>
+</section>
+<section id="in-which-years-boeing-737-7h4-model-is-constructed-and-how-many" class="level1" data-number="3">
+<h1 data-number="3"><span class="header-section-number">3</span> In which years, BOEING 737-7H4 model is constructed and how many?</h1>
+<p>In, what years “737-7H4” is constructed, and how many?</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb9"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a>planes <span class="sc">%&gt;%</span> </span>
-<span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(model<span class="sc">==</span><span class="st">'737-7H4'</span>) <span class="sc">%&gt;%</span></span>
-<span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">group_by</span>(year) <span class="sc">%&gt;%</span></span>
-<span id="cb9-4"><a href="#cb9-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">summarise</span>(<span class="at">say=</span><span class="fu">n</span>())</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a>planes <span class="sc">%&gt;%</span> </span>
+<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(model<span class="sc">==</span><span class="st">'737-7H4'</span>) <span class="sc">%&gt;%</span></span>
+<span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">group_by</span>(year) <span class="sc">%&gt;%</span></span>
+<span id="cb7-4"><a href="#cb7-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">summarise</span>(<span class="at">say=</span><span class="fu">n</span>())</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code># A tibble: 16 × 2
     year   say
@@ -334,9 +329,37 @@ $ engine       &lt;chr&gt; "Turbo-fan", "Turbo-fan", "Turbo-fan", "Turbo-fan", "
 16    NA     6</code></pre>
 </div>
 </div>
-<p>Since 1997, 737-7H4 is constructed and used in NYC Airlines. There are 6 planes having missing year values. In 2004, number of 737-7H4 planes is at the peak, after 2004 number of 737-7H4 planes are decreasing, but still it is the most common plane model in NYC flights.</p>
+<p>Since 1997, 737-7H4 is constructed and used in NYC flights There are 6 planes having missing year values. In 2004, number of 737-7H4 planes is at the peak, after 2004 number of 737-7H4 planes are decreasing, but still it is the most common plane model in NYC flights.</p>
+<section id="is-seat-number-of-boeing-737-7h4-different-from-average-number-of-seats" class="level2" data-number="3.1">
+<h2 data-number="3.1" class="anchored" data-anchor-id="is-seat-number-of-boeing-737-7h4-different-from-average-number-of-seats"><span class="header-section-number">3.1</span> Is seat number of BOEING 737-7H4 different from average number of seats?</h2>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb9"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a>all_seats <span class="ot">=</span> planes <span class="sc">%&gt;%</span> </span>
+<span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">summarise</span>(<span class="fu">mean</span>(seats),<span class="fu">min</span>(seats),<span class="fu">max</span>(seats),<span class="fu">sd</span>(seats))</span>
+<span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-4"><a href="#cb9-4" aria-hidden="true" tabindex="-1"></a>common_model_seats <span class="ot">=</span> planes <span class="sc">%&gt;%</span> </span>
+<span id="cb9-5"><a href="#cb9-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(model<span class="sc">==</span><span class="st">'737-7H4'</span>) <span class="sc">%&gt;%</span></span>
+<span id="cb9-6"><a href="#cb9-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">group_by</span>(model) <span class="sc">%&gt;%</span></span>
+<span id="cb9-7"><a href="#cb9-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">summarise</span>(<span class="at">avg_seats=</span><span class="fu">mean</span>(seats),<span class="fu">min</span>(seats),<span class="fu">max</span>(seats))</span>
+<span id="cb9-8"><a href="#cb9-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-9"><a href="#cb9-9" aria-hidden="true" tabindex="-1"></a>all_seats</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 1 × 4
+  `mean(seats)` `min(seats)` `max(seats)` `sd(seats)`
+          &lt;dbl&gt;        &lt;int&gt;        &lt;int&gt;       &lt;dbl&gt;
+1          154.            2          450        73.7</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb11"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a>common_model_seats</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 1 × 4
+  model   avg_seats `min(seats)` `max(seats)`
+  &lt;chr&gt;       &lt;dbl&gt;        &lt;int&gt;        &lt;int&gt;
+1 737-7H4       140          140          140</code></pre>
+</div>
+</div>
+<p>BOEING 737-7H4 has 140 seats, average number of seats of all planes is 154, so we can say, the model number of seat is near to the overall mean.</p>
 
 
+</section>
 </section>
 
 </main> <!-- /main -->

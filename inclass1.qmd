@@ -32,11 +32,9 @@ library(nycflights13)
 ```
 
 In this exercise, we will explore planes dataset in nycflights13 library
-planes, consists of construction information about  3,322 planes used for all flights departing NYC in 2013.
+. Planes, consists of construction information about  3,322 planes used for all flights departing NYC in 2013.
 
-```{r data_first_look, message = FALSE}
-glimpse(planes)
-```
+## Most common planes
 
 10 Most common models, manufacturers of the planes are,
 
@@ -56,7 +54,9 @@ planes %>%
   filter(model=='737-7H4' & manufacturer!='BOEING') 
 ```
 
-In, what years 737-7H4 is constructed, and how many?
+# In which years, BOEING 737-7H4  model is constructed and how many? 
+
+In, what years "737-7H4" is constructed, and how many?
 
 ```{r common_by_year, message = FALSE}
 planes %>% 
@@ -64,9 +64,25 @@ planes %>%
   group_by(year) %>%
   summarise(say=n())
 ```
-Since 1997, 737-7H4 is constructed and used in NYC Airlines. There are 6 planes having missing year values. In 2004, number of 737-7H4 planes is at the peak, after 2004 number of 737-7H4 planes are decreasing, but still it is the most common plane model in NYC flights.
+Since 1997, 737-7H4 is constructed and used in NYC flights There are 6 planes having missing year values. In 2004, number of 737-7H4 planes is at the peak, after 2004 number of 737-7H4 planes are decreasing, but still it is the most common plane model in NYC flights.
+
+## Is seat number of BOEING 737-7H4 different from average number of seats?
+
+```{r seat_numbers}
+
+all_seats = planes %>% 
+  summarise(mean(seats),min(seats),max(seats),sd(seats))
+
+common_model_seats = planes %>% 
+  filter(model=='737-7H4') %>%
+  group_by(model) %>%
+  summarise(avg_seats=mean(seats),min(seats),max(seats))
+
+all_seats
+common_model_seats
+
+```
 
 
-
-
+BOEING 737-7H4 has 140 seats, average number of seats of all planes is 154, so we can say, the model number of seat is near to the overall mean. 
 
