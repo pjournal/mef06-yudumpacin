@@ -1,0 +1,72 @@
+---
+title: "In Class Exercise 1" 
+author: "Yudum Paçin"
+date: "21 October 2022"
+output: 
+  html_document:
+    toc: true
+    toc_depth: 3
+    toc_float: true
+---
+<style>
+    body { 
+    font-family: Calibri;
+    text-align: justify;
+    font-size: 11pt;
+    }
+</style>
+
+### IN CLASS EXERCISE 1 {.unnumbered}
+
+Install necessary packages
+
+```{r install_packages, eval=FALSE}
+install.packages("tidyverse")
+install.packages("nycflights13")
+```
+
+Call necessary libraries
+```{r call_libraries, message = FALSE}
+library(tidyverse)
+library(nycflights13)
+```
+
+In this exercise, we will explore planes dataset in nycflights13 library
+planes, consists of construction information about  3,322 planes used for all flights departing NYC in 2013.
+
+```{r data_first_look, message = FALSE}
+glimpse(planes)
+```
+
+10 Most common models, manufacturers of the planes are,
+
+```{r data_sort, message = FALSE}
+planes %>% 
+  group_by(model,manufacturer) %>%
+  summarise(say=n()) %>%
+  arrange(desc(say),10)
+```
+737-7H4 BOEING is the most common plane,
+Let's have a look at this plane in detail
+
+737-7H4 is a BOEING model only!, There is no other manufacturer. So, we can filter with "model" only.
+
+```{r check_data, message = FALSE}
+planes %>% 
+  filter(model=='737-7H4' & manufacturer!='BOEING') 
+```
+
+In, what years 737-7H4 is constructed, and how many?
+
+```{r common_by_year, message = FALSE}
+planes %>% 
+  filter(model=='737-7H4') %>%
+  group_by(year) %>%
+  summarise(say=n())
+```
+Since 1997, 737-7H4 is constructed and used in NYC Airlines. There are 6 planes having missing year values. In 2004, number of 737-7H4 planes is at the peak, after 2004 number of 737-7H4 planes are decreasing, but still it is the most common plane model in NYC flights.
+
+
+
+
+
