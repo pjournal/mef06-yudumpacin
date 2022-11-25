@@ -54,7 +54,7 @@ planes %>%
   filter(model=='737-7H4' & manufacturer!='BOEING') 
 ```
 
-# In which years, BOEING 737-7H4  model is constructed and how many? 
+## In which years, BOEING 737-7H4  model is constructed and how many? 
 
 In, what years "737-7H4" is constructed, and how many?
 

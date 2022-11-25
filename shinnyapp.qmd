@@ -1,0 +1,32 @@
+---
+title: "SHINNY APP"
+date: "26 November 2022"
+format:
+  html:
+    toc: true
+    toc-depth: 3
+    toc-float: true
+    number-sections: false
+---
+
+```{=html}
+<style>
+    body { 
+    font-family: Calibri;
+    text-align: justify;
+    font-size: 11pt;
+    div.hidecode + pre {display: none}
+    }
+</style>
+```
+In this assignment, a shinny web application is developed with the [Foreign Srudents by Nationality Data](https://github.com/berkorbay/datasets/raw/master/foreign_students/foreign_students_by_nationality_2021_2022.xlsx).
+
+With the shinny application, universities in Turkey can be selected by province and type information, with the selected university nationality histogram is shown at the side panel.
+
+## [Click Here for the Shinny Web Application] (https://44zj2p-yudum-pa0in.shinyapps.io/shinny/)
+
+## Here is the Command Line for the Shinny Web Application:
+```{r}
+shiny::runGitHub("pjournal/mef06-yudumpacin",subdir="/shinny/app.R")
+```
+
