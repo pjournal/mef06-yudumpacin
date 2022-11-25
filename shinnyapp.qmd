@@ -21,12 +21,13 @@ format:
 ```
 In this assignment, a shinny web application is developed with the [Foreign Srudents by Nationality Data](https://github.com/berkorbay/datasets/raw/master/foreign_students/foreign_students_by_nationality_2021_2022.xlsx).
 
-With the shinny application, universities in Turkey can be selected by province and type information, with the selected university nationality histogram is shown at the side panel.
+With the shinny application, universities of Turkey can be selected by their province and their type information. When the user selects a university, nationality histogram is shown at the side panel.
 
-## [Click Here for the Shinny Web Application] (https://44zj2p-yudum-pa0in.shinyapps.io/shinny/)
+### [Click Here for the Shinny Web Application](https://44zj2p-yudum-pa0in.shinyapps.io/shinny/)
 
-## Here is the Command Line for the Shinny Web Application:
-```{r}
+### Here is the Command Line for the Shinny Web Application:
+```{r eval=FALSE}
 shiny::runGitHub("pjournal/mef06-yudumpacin",subdir="/shinny/app.R")
 ```
+
 
