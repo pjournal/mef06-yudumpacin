@@ -1,0 +1,38 @@
+---
+title: "OR Case Study: Cash+" 
+author: "Yudum Paçin"
+date: "29 December 2022"
+output: 
+  html_document:
+    toc: true
+    toc_depth: 3
+    toc_float: true
+---
+<style>
+    body { 
+    font-family: Calibri;
+    text-align: justify;
+    font-size: 11pt;
+    }
+</style>
+
+Management the cash demand of ATMs is very important task for the banks. Keeping more than enough cash is costly and keeping insufficient cash on ATMs can cause customer dissatisfaction. In addition to that, costs of carrying cash between Cash Management Centers, preparing cash bags, counting cash, and paying Cash-in-Transit (CIT) staff are operating costs of that. 
+
+
+The case study, [Cash+ Keeps ATMs Optimally Stocked](https://www.gurobi.com/case_studies/arute-solutions-cash-keeps-atms-optimally-stocked/) describes the use of operations research and optimization techniques to improve the cash management process for ATMs to solve these questions.
+
+![](images/gurobi.png)
+
+
+The problem that Arute Solutions was trying to solve was how to ensure that 
+
+* **The ATMs  were stocked with enough cash to meet customer demand**
+* **The cost of transporting and handling the cash is minimized**. 
+
+To solve this problem, they developed a mathematical model that took into account a number of variables, including the prediction of the amount of cash that each ATM needed for next N days. They need to solve 5000+ MIP problems in less than 30 minutes, where each model has around 2500+ variables and 5000+ constraints—while ensuring a 0.01% optimality gap at most. The MIP (Mixed Integer Problem) model was implemented using **Gurobi**, an optimization software platform. It was able to identify the optimal amount of cash that each ATM should have, as well as the most cost-effective way to transport and distribute the cash among the ATMs. As a result of this optimization, Arute Solutions was able to 36% reduction in the average dispenser unit closing with the same CITs. Cash+ was able to provide cost savings for all customers by this solution.
+
+![Arute’s Cash+ Optimization Workflow](images/cash.png)
+
+To sum up, this case study demonstrates the benefits of using operations research and optimization techniques to improve the efficiency and effectiveness of cash management processes. It shows how these techniques can be used to minimize costs and improve customer satisfaction by ensuring that ATMs are always stocked with the right amount of cash.
+
+

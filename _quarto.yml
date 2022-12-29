@@ -10,6 +10,7 @@ book:
     - assignment1.Rmd
     - inclass1.qmd
     - shinnyapp.qmd
+    - or.qmd
   page-footer: 
     center: "[MEF BDA 503](https://mef-bda503.github.io)" 
   sharing: [twitter, facebook]
